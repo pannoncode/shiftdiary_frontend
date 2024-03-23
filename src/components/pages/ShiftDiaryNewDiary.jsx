@@ -79,7 +79,7 @@ const ShiftDiaryNewDiary = () => {
   };
 
   return (
-    <Container maxWidth="sm" sx={{ mt: 3 }}>
+    <Container maxWidth="md" sx={{ mt: 3 }}>
       <Box
         sx={{
           display: "flex",
@@ -93,7 +93,7 @@ const ShiftDiaryNewDiary = () => {
         <LabelBox padding={1}>
           <Typography variant="h5">Új műszaknapló létrehozása</Typography>
         </LabelBox>
-        <Box sx={{ mt: 5, display: "flex", flexDirection: "column" }}>
+        <Box sx={{ mt: 5, display: "flex", flexDirection: "row" }}>
           <DropdownMachine
             label="Gépszám"
             menuItems={allMachine}

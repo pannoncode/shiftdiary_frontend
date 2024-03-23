@@ -15,7 +15,7 @@ const DropdownMachine = ({
   };
 
   return (
-    <FormControl sx={{ m: 1, minWidth: 160 }} color="text">
+    <FormControl sx={{ m: 1, width: 200 }} color="text">
       <InputLabel id="machine">{label}</InputLabel>
       <Select
         labelId="machine-selector"

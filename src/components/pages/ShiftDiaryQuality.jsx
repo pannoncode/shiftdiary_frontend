@@ -68,9 +68,9 @@ const ShiftDiaryQuality = () => {
   useEffect(() => {
     if (qualityId) {
       setInitialValues({
-        minor_qa_defect_num: shiftDiaryQuality.minor_qa_defect_num || 0,
+        minor_qa_defect_num: shiftDiaryQuality.minor_qa_defect_num || "",
         minor_qa_defect: shiftDiaryQuality.minor_qa_defect || "",
-        major_qa_defect_num: shiftDiaryQuality.major_qa_defect_num || 0,
+        major_qa_defect_num: shiftDiaryQuality.major_qa_defect_num || "",
         major_qa_defect: shiftDiaryQuality.major_qa_defect || "",
         quality_notes: shiftDiaryQuality.quality_notes || "",
       });

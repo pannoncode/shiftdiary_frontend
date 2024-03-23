@@ -15,6 +15,7 @@ import LogIn from "./components/pages/LogIn";
 import HomeScreen from "./components/pages/HomeScreen";
 import Profil from "./components/pages/Profil";
 import AddNewProduct from "./components/pages/AddNewProduct";
+import RiportScreen from "./components/pages/RiportScreen";
 
 import { loginSlice } from "./app/loginSlice";
 import { useDispatch, useSelector } from "react-redux";
@@ -63,6 +64,10 @@ const App = () => {
               <Route
                 path="/AddNewProduct"
                 element={isAuth ? <AddNewProduct /> : <LogIn />}
+              />
+              <Route
+                path="/Riports"
+                element={isAuth ? <RiportScreen /> : <LogIn />}
               />
             </Routes>
           </MainBody>

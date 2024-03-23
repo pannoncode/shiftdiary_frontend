@@ -12,7 +12,7 @@ const DropdownShifts = ({ label, selectedShift, setSelectedShift }) => {
   };
 
   return (
-    <FormControl sx={{ m: 1, minWidth: 160 }} color="text">
+    <FormControl sx={{ m: 1, width: 200 }} color="text">
       <InputLabel id="shift">{label}</InputLabel>
       <Select
         labelId="shift-selector"

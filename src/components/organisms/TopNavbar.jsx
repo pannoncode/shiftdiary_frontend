@@ -68,6 +68,7 @@ const TopNavbar = (props) => {
   const [anchorElProfil, setAnchorElProfil] = useState(null);
   const [anchorElMachinesProducts, setAnchorElMachinesProducts] =
     useState(null);
+  const [anchorElRiports, setAnchorElRiports] = useState(null);
 
   const [permissonValue, setPermissionValue] = useState(0);
 
@@ -76,6 +77,7 @@ const TopNavbar = (props) => {
   const openUserMenu = Boolean(anchorElUser);
   const openProfilMenu = Boolean(anchorElProfil);
   const openMachinesProducts = Boolean(anchorElMachinesProducts);
+  const openRiports = Boolean(anchorElRiports);
 
   const navigate = useNavigate();
 
@@ -124,6 +126,7 @@ const TopNavbar = (props) => {
     setAnchorElProfil(null);
   };
 
+  //Gépek/termékek
   const handleClickProducts = (event) => {
     setAnchorElMachinesProducts(event.currentTarget);
   };
@@ -139,6 +142,15 @@ const TopNavbar = (props) => {
     dispatch(loginSlice.actions.checkToken());
     handleCloseProfil();
     navigate("Login");
+  };
+
+  //riportok
+  const handleClickRiports = (event) => {
+    setAnchorElRiports(event.currentTarget);
+  };
+
+  const handelCloseRiports = () => {
+    setAnchorElRiports(null);
   };
 
   useEffect(() => {
@@ -271,15 +283,6 @@ const TopNavbar = (props) => {
                 "aria-labelledby": "basic-button",
               }}
             >
-              {/* <MenuItem
-                onClick={handleClose}
-                component={Link}
-                to="AddNewMachine"
-                divider={true}
-                disabled={permissonValue !== 2}
-              >
-                Új gép rögzítése
-              </MenuItem> */}
               <MenuItem
                 onClick={handleClose}
                 component={Link}
@@ -296,6 +299,37 @@ const TopNavbar = (props) => {
                 divider={true}
               >
                 Műszak naplók
+              </MenuItem>
+            </Menu>
+            {isAuth ? (
+              <Button
+                id="riports-button"
+                aria-controls={open ? "riports" : undefined}
+                aria-haspopup="true"
+                aria-expanded={open ? "true" : undefined}
+                onClick={handleClickRiports}
+                sx={{ color: theme.palette.warning.light, fontWeight: "bold" }}
+              >
+                Riportok
+              </Button>
+            ) : null}
+            <Menu
+              id="riports"
+              anchorEl={anchorElRiports}
+              open={openRiports}
+              onClose={handelCloseRiports}
+              MenuListProps={{
+                "aria-labelledby": "riports",
+              }}
+            >
+              <MenuItem
+                onClick={handelCloseRiports}
+                component={Link}
+                to="Riports"
+                divider={true}
+                disabled={permissonValue !== 2}
+              >
+                Napi Riportok
               </MenuItem>
             </Menu>
             {isAuth ? (

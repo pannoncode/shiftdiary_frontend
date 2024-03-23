@@ -375,6 +375,7 @@ const ShiftDiaryProduction = () => {
         successmsg={setAlertSuccesMessage}
         error={setAlertError}
         errormsg={setAlertErrorMessage}
+        showDelete={true}
       />
     </ShiftDiaryElement>
   );

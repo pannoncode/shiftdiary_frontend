@@ -94,8 +94,6 @@ const ShiftDiaryMachineDefect = () => {
       created_it: user,
     };
 
-    console.log(machineDefectId.length);
-
     if (machineDefectId && machineDefectId > 0) {
       const editMachineDefectContent = new ApiClient(
         apiUrl,

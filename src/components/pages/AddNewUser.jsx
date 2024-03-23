@@ -47,7 +47,6 @@ const AddNewUser = () => {
       .getData()
       .then((response) => {
         setAllUser(response);
-        console.log(response);
       })
       .catch((error) => {
         console.log(error.response);
